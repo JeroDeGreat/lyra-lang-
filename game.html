@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lyra Quest — Learn Lyra through Play</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/lyra-icon.svg"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/img/lyra-icon.svg" class="nav-icon"/><span>Lyra</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#install">Install</a></li>
+      <li><a href="index.html#tour">Language</a></li>
+      <li><a href="game.html" style="color:var(--accent)">🎮 Lyra Quest</a></li>
+      <li><a href="versions.html">Versions</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="deploy.html">🚀 Go Live</a></li><li><a href="index.html#download" class="btn-nav">Download</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </div>
+</nav>
+
+<section class="hero" style="min-height:50vh;padding:140px 0 60px">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="hero-badge">🎮 Interactive Learning Game</div>
+    <h1 class="hero-title">Lyra Quest</h1>
+    <p class="hero-sub">Learn the entire Lyra programming language through 15 interactive challenges. From Hello World to building a full GUI app — all inside a beautiful dark-mode game.</p>
+    <div class="hero-btns">
+      <a href="downloads/lyra-lang-2.0.0.zip" class="btn btn-primary" download>Download &amp; Play</a>
+      <a href="#howtoplay" class="btn btn-ghost">How to Play →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="howtoplay">
+  <div class="container">
+    <div class="sh"><span class="stag">How to Play</span><h2>Your adventure starts here</h2></div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="fi">📖</div><h3>Story-Driven Learning</h3><p>Each level has a story — you are an adventurer unlocking ancient Lyra scrolls. Each scroll teaches a new concept.</p></div>
+      <div class="feat-card"><div class="fi">⌨️</div><h3>Write Real Code</h3><p>You type actual Lyra code to solve each challenge. The game checks your answer and runs it.</p></div>
+      <div class="feat-card"><div class="fi">💡</div><h3>Smart Hints</h3><p>Stuck? Press Get Hint for guidance. After 3 failed attempts, a hint appears automatically.</p></div>
+      <div class="feat-card"><div class="fi">📚</div><h3>Show Example</h3><p>If you're really stuck, press Show Example — but it costs a life. Study it, then try again your way.</p></div>
+      <div class="feat-card"><div class="fi">🏆</div><h3>Earn Badges</h3><p>Complete each level to earn a badge — First Words, Logic Master, Golem Maker, Quill Master, and more.</p></div>
+      <div class="feat-card"><div class="fi">📈</div><h3>Progressive Difficulty</h3><p>15 levels from Hello World through Variables, Loops, Functions, Classes, Files, HTTP, Database and GUI.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="sh"><span class="stag">The Levels</span><h2>15 quests — beginner to master</h2></div>
+    <div class="levels-grid">
+      <div class="level-card beginner"><div class="lnum">1</div><div class="linfo"><h4>Your First Words</h4><p>Print your first message to the world.</p><span class="ltag beginner-tag">Beginner</span></div></div>
+      <div class="level-card beginner"><div class="lnum">2</div><div class="linfo"><h4>Naming Things</h4><p>Store data in variables.</p><span class="ltag beginner-tag">Beginner</span></div></div>
+      <div class="level-card beginner"><div class="lnum">3</div><div class="linfo"><h4>The Math Gate</h4><p>Arithmetic with English words.</p><span class="ltag beginner-tag">Beginner</span></div></div>
+      <div class="level-card beginner"><div class="lnum">4</div><div class="linfo"><h4>The Gatekeeper</h4><p>If/else conditions.</p><span class="ltag beginner-tag">Beginner</span></div></div>
+      <div class="level-card beginner"><div class="lnum">5</div><div class="linfo"><h4>The Echo Chamber</h4><p>Repeat loops.</p><span class="ltag beginner-tag">Beginner</span></div></div>
+      <div class="level-card inter"><div class="lnum">6</div><div class="linfo"><h4>The Spell Factory</h4><p>Define reusable functions.</p><span class="ltag inter-tag">Intermediate</span></div></div>
+      <div class="level-card inter"><div class="lnum">7</div><div class="linfo"><h4>The Treasure Chest</h4><p>Create and loop over lists.</p><span class="ltag inter-tag">Intermediate</span></div></div>
+      <div class="level-card inter"><div class="lnum">8</div><div class="linfo"><h4>The Ancient Codex</h4><p>Maps and key-value pairs.</p><span class="ltag inter-tag">Intermediate</span></div></div>
+      <div class="level-card inter"><div class="lnum">9</div><div class="linfo"><h4>The Safety Net</h4><p>Try/catch error handling.</p><span class="ltag inter-tag">Intermediate</span></div></div>
+      <div class="level-card adv"><div class="lnum">10</div><div class="linfo"><h4>The Golem Maker</h4><p>Classes and objects.</p><span class="ltag adv-tag">Advanced</span></div></div>
+      <div class="level-card adv"><div class="lnum">11</div><div class="linfo"><h4>The Scribe</h4><p>Read and write files.</p><span class="ltag adv-tag">Advanced</span></div></div>
+      <div class="level-card adv"><div class="lnum">12</div><div class="linfo"><h4>The Messenger Hawk</h4><p>HTTP requests and JSON.</p><span class="ltag adv-tag">Advanced</span></div></div>
+      <div class="level-card adv"><div class="lnum">13</div><div class="linfo"><h4>The Vault Keeper</h4><p>SQLite database operations.</p><span class="ltag adv-tag">Advanced</span></div></div>
+      <div class="level-card adv"><div class="lnum">14</div><div class="linfo"><h4>The Window Maker</h4><p>Build a GUI application.</p><span class="ltag adv-tag">Advanced</span></div></div>
+      <div class="level-card master"><div class="lnum">15</div><div class="linfo"><h4>The Grand Finale</h4><p>Combine everything you learned.</p><span class="ltag master-tag">Master</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align:center">
+    <div class="sh"><span class="stag">Play Now</span><h2>Download Lyra and launch the game</h2></div>
+    <div class="cb large" style="max-width:600px;margin:0 auto 32px;text-align:left">
+      <span style="color:#8899b4">Windows:</span><br/>
+      <code>lyra run examples\games\quill_quest\quill_quest.lyr</code><br/><br/>
+      <span style="color:#8899b4">Linux / macOS:</span><br/>
+      <code>lyra run examples/games/quill_quest/quill_quest.lyr</code>
+    </div>
+    <a href="downloads/lyra-lang-2.0.0.zip" class="btn btn-primary" download>Download Lyra 2.0</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom"><p>Copyright © 2025 <strong>Jero W. Grabo</strong> and the Lyra Language Team. MIT License.</p></div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

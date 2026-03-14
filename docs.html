@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lyra — Documentation</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/lyra-icon.svg"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/img/lyra-icon.svg" class="nav-icon"/><span>Lyra</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#install">Install</a></li>
+      <li><a href="game.html">🎮 Lyra Quest</a></li>
+      <li><a href="versions.html">Versions</a></li>
+      <li><a href="docs.html" style="color:var(--accent)">Docs</a></li>
+      <li><a href="deploy.html">🚀 Go Live</a></li><li><a href="index.html#download" class="btn-nav">Download</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </div>
+</nav>
+
+<section class="hero" style="min-height:40vh;padding:140px 0 60px">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="hero-badge">📖 Documentation</div>
+    <h1 class="hero-title" style="font-size:2.8rem">Lyra Docs</h1>
+    <p class="hero-sub">Everything you need to write Lyra code.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="docs-grid">
+      <a class="doc-card" href="docs/LANGUAGE_REFERENCE.md"><div class="doc-icon">📖</div><h3>Language Reference</h3><p>Complete syntax — every keyword, operator, module, and construct with examples.</p></a>
+      <a class="doc-card" href="index.html#install"><div class="doc-icon">⚙️</div><h3>Installation Guide</h3><p>Step-by-step setup for Windows, Linux, Kali, macOS with all troubleshooting.</p></a>
+      <a class="doc-card" href="index.html#tour"><div class="doc-icon">🗺️</div><h3>Language Tour</h3><p>Quick overview of all language features with short examples.</p></a>
+      <a class="doc-card" href="game.html"><div class="doc-icon">🎮</div><h3>Lyra Quest Game</h3><p>Learn interactively — 15 levels from Hello World to full GUI apps.</p></a>
+    </div>
+
+    <div style="margin-top:64px">
+      <div class="sh"><span class="stag">Quick Reference</span><h2>The two symbols</h2></div>
+      <div class="tour-grid">
+        <div class="tour-item"><h4>The comma ,</h4><pre>note Separates items and arguments.
+
+let x, y be 1, 2.
+let fruits be a list of
+  "apple", "banana", "cherry".
+define add taking a, b.
+  return a plus b.
+end define.</pre></div>
+        <div class="tour-item"><h4>The period .</h4><pre>note Ends every statement, like
+note a period ends a sentence.
+
+let name be "Alice".
+say "Hello, {name}!".
+if name is "Alice".
+  say "Hi Alice!".
+end if.</pre></div>
+        <div class="tour-item"><h4>String Interpolation</h4><pre>let name be "Alice".
+let age be 30.
+say "Hello, {name}!".
+say "You are {age} years old.".
+say "List has {the size of fruits} items.".</pre></div>
+        <div class="tour-item"><h4>Comments</h4><pre>note This is a comment.
+
+begin note.
+  This spans
+  multiple lines.
+end note.</pre></div>
+      </div>
+    </div>
+
+    <div style="margin-top:64px">
+      <div class="sh"><span class="stag">All Modules</span><h2>Standard Library</h2></div>
+      <div class="tour-grid">
+        <div class="tour-item"><h4>use math.</h4><pre>say pi.
+say e.
+let r be square root of 144.</pre></div>
+        <div class="tour-item"><h4>use files.</h4><pre>write "Hello" to file "out.txt".
+let c be the content of file "out.txt".
+delete file "out.txt".</pre></div>
+        <div class="tour-item"><h4>use random.</h4><pre>let n be random number
+  between 1 and 100.</pre></div>
+        <div class="tour-item"><h4>use data.</h4><pre>let rows be readcsv with "data.csv".
+let avg be average with numbers.
+let sorted be sortrows with rows, "name".</pre></div>
+        <div class="tour-item"><h4>use ml.</h4><pre>let model be trainbayes
+  with emails, labels.
+let r be predictbayes
+  with model, "new text".</pre></div>
+        <div class="tour-item"><h4>use crypto.</h4><pre>let h be hash with "password".
+let t be token.
+let s be passwordstrength with "pwd".</pre></div>
+        <div class="tour-item"><h4>use net.</h4><pre>let ip be dnslookup with "google.com".
+let open be isportopen with "host", 80.</pre></div>
+        <div class="tour-item"><h4>use blockchain.</h4><pre>let r be newblockchain with "chain".
+let h be addblock with "chain", "tx".
+let v be validateblockchain with "chain".</pre></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom"><p>Copyright © 2025 <strong>Jero W. Grabo</strong> and the Lyra Language Team. MIT License.</p></div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

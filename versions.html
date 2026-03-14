@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lyra — All Versions &amp; Downloads</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/lyra-icon.svg"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    /* ── Versions page specific styles ── */
+    .ver-page-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .ver-page-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; }
+    .ver-page-hero p  { color: var(--text-muted); font-size: 1.05rem; }
+
+    .versions-list { max-width: 860px; margin: 0 auto; }
+
+    /* Each release card */
+    .release {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      margin-bottom: 28px;
+      transition: box-shadow .3s;
+    }
+    .release:hover { box-shadow: 0 8px 40px rgba(0,0,0,.4); }
+
+    .release.latest  { border-color: var(--primary); }
+    .release.stable  { border-color: var(--success); }
+    .release.legacy  { border-color: var(--border); opacity: .85; }
+    .release.planned { border-color: #555; border-style: dashed; opacity: .7; }
+
+    .release-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .release-version {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .release-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .release-date {
+      color: var(--text-muted);
+      font-size: .88rem;
+      margin-left: auto;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+    .tag-latest  { background: rgba(74,108,247,.2);  color: var(--primary); }
+    .tag-stable  { background: rgba(0,184,148,.15);  color: var(--success); }
+    .tag-legacy  { background: var(--surface2);      color: var(--text-muted); }
+    .tag-planned { background: rgba(100,100,100,.15); color: #888; }
+
+    .release-desc {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 6px 24px;
+      margin-bottom: 28px;
+    }
+    .feature-list li {
+      color: var(--text-muted);
+      font-size: .88rem;
+    }
+    .feature-list li::before { content: "✓ "; color: var(--success); }
+
+    .download-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .2s;
+      border: none;
+      cursor: pointer;
+    }
+    .dl-btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(74,108,247,.35);
+    }
+    .dl-btn-primary:hover { background: var(--primary-h); color: white; transform: translateY(-1px); }
+    .dl-btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .dl-btn-ghost:hover { border-color: var(--primary); background: var(--surface2); color: var(--text); }
+    .dl-btn-disabled {
+      background: var(--surface2);
+      color: var(--text-muted);
+      cursor: not-allowed;
+      opacity: .6;
+    }
+    .dl-file-size {
+      color: var(--text-muted);
+      font-size: .8rem;
+      margin-left: 4px;
+    }
+
+    /* Add future version guide */
+    .add-version-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      margin-top: 48px;
+    }
+    .add-version-box h2 { margin-bottom: 8px; }
+    .add-version-box p { color: var(--text-muted); margin-bottom: 24px; }
+    .code-snippet {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      font-family: monospace;
+      font-size: .88rem;
+      color: var(--accent);
+      line-height: 1.8;
+      margin: 16px 0;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .snippet-comment { color: #8b949e; font-style: italic; }
+    .snippet-key { color: #79c0ff; }
+    .snippet-value { color: #a5d6ff; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/img/lyra-icon.svg" alt="Lyra" class="nav-icon"/>
+      <span>Lyra</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#install">Install</a></li>
+      <li><a href="index.html#tour">Language</a></li>
+      <li><a href="game.html">🎮 Lyra Quest</a></li>
+      <li><a href="versions.html" style="color:var(--accent)">Versions</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="deploy.html">🚀 Go Live</a></li><li><a href="index.html#download" class="btn-nav">Download</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </div>
+</nav>
+
+<section class="ver-page-hero section-dark">
+  <div class="hero-bg"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="hero-badge">📦 All Releases</div>
+    <h1 class="hero-title" style="font-size:2.8rem">Downloads &amp; Versions</h1>
+    <p>Every release of Lyra — pick the version you want and download it directly.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container versions-list">
+
+    <!-- ══════════════════════════════════════════════════════
+         v2.0.0 — LATEST
+    ══════════════════════════════════════════════════════════ -->
+    <div class="release latest">
+      <div class="release-header">
+        <div class="release-version">v2.0.0</div>
+        <div class="release-name">Lyra</div>
+        <span class="tag tag-latest">Latest</span>
+        <span class="tag tag-stable">Stable</span>
+        <div class="release-date">2025</div>
+      </div>
+
+      <p class="release-desc">
+        The first full release under the name <strong>Lyra</strong>. File extension changed to
+        <code style="background:var(--surface2);padding:2px 6px;border-radius:4px;color:var(--gold)">.lyr</code>
+        and CLI command is now <code style="background:var(--surface2);padding:2px 6px;border-radius:4px;color:var(--gold)">lyra</code>.
+        Major additions: AI and machine learning, professional dark-mode GUI, SQLite database,
+        HTTP server, cryptography, networking, blockchain, and the Lyra Quest learning game.
+        Only two symbols allowed in all code: <strong>,</strong> and <strong>.</strong>
+      </p>
+
+      <ul class="feature-list">
+        <li>Renamed from Quill to Lyra</li>
+        <li>File extension .lyr</li>
+        <li>Only , and . as symbols — enforced everywhere</li>
+        <li>Professional dark-mode GUI</li>
+        <li>Charts: bar, line, pie</li>
+        <li>SQLite database built in</li>
+        <li>AI: Naive Bayes, regression, k-NN, k-Means</li>
+        <li>Cryptography: hashing, tokens, passwords</li>
+        <li>Networking: DNS, port scan, TCP</li>
+        <li>HTTP server and REST client</li>
+        <li>Blockchain: mining and validation</li>
+        <li>Lyra Quest — 15-level learning game</li>
+        <li>6 new stdlib modules</li>
+        <li>30+ working example programs</li>
+        <li>Windows, Linux, macOS support</li>
+        <li>VS Code extension with lyre icon</li>
+      </ul>
+
+      <div class="download-row">
+        <a href="downloads/lyra-lang-2.0.0.zip" class="dl-btn dl-btn-primary" download>
+          ⬇ lyra-lang-2.0.0.zip
+          <span class="dl-file-size">~300 KB</span>
+        </a>
+        <a href="downloads/lyra-lang.vsix" class="dl-btn dl-btn-ghost" download>
+          🧩 VS Code Extension (.vsix)
+        </a>
+        <a href="index.html#install" class="dl-btn dl-btn-ghost">
+          📖 Install Instructions
+        </a>
+      </div>
+
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+        <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:12px">
+          <strong>Install on Windows:</strong>
+        </p>
+        <div class="code-snippet">cd "C:\Users\YourName\Downloads\lyra-lang"
+powershell -ExecutionPolicy Bypass -File ".\install.ps1"</div>
+        <p style="color:var(--text-muted);font-size:.85rem;margin:12px 0">
+          <strong>Verify:</strong>
+        </p>
+        <div class="code-snippet">lyra version</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         v1.0.0 — ORIGINAL QUILL RELEASE
+    ══════════════════════════════════════════════════════════ -->
+    <div class="release legacy">
+      <div class="release-header">
+        <div class="release-version">v1.0.0</div>
+        <div class="release-name">Quill</div>
+        <span class="tag tag-legacy">Legacy</span>
+        <div class="release-date">2025</div>
+      </div>
+
+      <p class="release-desc">
+        The original release — named <strong>Quill</strong> with file extension
+        <code style="background:var(--surface2);padding:2px 6px;border-radius:4px;color:var(--text-muted)">.ql</code>
+        and CLI command <code style="background:var(--surface2);padding:2px 6px;border-radius:4px;color:var(--text-muted)">quill</code>.
+        Contains the core language: variables, arithmetic, conditions, loops, functions,
+        lists, maps, classes, file I/O, error handling, and basic GUI.
+        Fully functional for learning and small projects.
+      </p>
+
+      <ul class="feature-list">
+        <li>File extension .ql</li>
+        <li>CLI command: quill</li>
+        <li>Variables and arithmetic (English words)</li>
+        <li>If, else, loops (repeat, while, for each)</li>
+        <li>Functions with parameters and return</li>
+        <li>Lists, maps, string operations</li>
+        <li>Classes with inheritance</li>
+        <li>File read, write, append, delete</li>
+        <li>Error handling with try and catch</li>
+        <li>Basic tkinter GUI</li>
+        <li>Standard library: math, files, random, time, os, json, web</li>
+        <li>VS Code extension with syntax highlighting</li>
+        <li>Windows installer (.ps1)</li>
+      </ul>
+
+      <div class="download-row">
+        <a href="downloads/quill-lang-1.0.0.zip" class="dl-btn dl-btn-ghost" download>
+          ⬇ quill-lang-1.0.0.zip
+        </a>
+        <div style="color:var(--text-muted);font-size:.85rem;margin-left:4px">
+          Note: uses <code style="color:var(--text-muted)">quill run file.ql</code>
+          — not <code style="color:var(--text-muted)">lyra</code>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+        <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:12px">
+          <strong>Install on Windows (v1.0.0):</strong>
+        </p>
+        <div class="code-snippet" style="color:var(--text-muted)">cd "C:\Users\YourName\Downloads\quill-lang"
+powershell -ExecutionPolicy Bypass -File ".\install.ps1"
+
+quill version</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         v3.0.0 — COMING SOON (easy to fill in later)
+    ══════════════════════════════════════════════════════════ -->
+    <div class="release planned">
+      <div class="release-header">
+        <div class="release-version" style="color:var(--text-muted)">v3.0.0</div>
+        <div class="release-name" style="color:var(--text-muted)">Lyra — The Compiler</div>
+        <span class="tag tag-planned">Planned</span>
+        <div class="release-date">Coming Soon</div>
+      </div>
+
+      <p class="release-desc">
+        The next major release. Planned features below — download will appear here when released.
+      </p>
+
+      <ul class="feature-list">
+        <li>Lyra-to-Python bytecode compiler</li>
+        <li>Lyra-to-JavaScript transpiler</li>
+        <li>Run Lyra in the browser</li>
+        <li>Package manager built in</li>
+        <li>Async support</li>
+        <li>Type checking</li>
+        <li>Mobile app support</li>
+        <li>WebAssembly target</li>
+        <li>Official package registry</li>
+      </ul>
+
+      <div class="download-row">
+        <span class="dl-btn dl-btn-disabled">⬇ Not yet released</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         HOW TO ADD A NEW VERSION (for Jero)
+    ══════════════════════════════════════════════════════════ -->
+    <div class="add-version-box">
+      <h2>How to add a new version</h2>
+      <p>
+        When you release a new version, follow these two steps to add it to this page.
+        No coding knowledge needed — just copy and paste.
+      </p>
+
+      <h3 style="margin-bottom:8px;font-size:1rem;color:var(--accent)">
+        Step 1 — Upload your new zip file to GitHub
+      </h3>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:8px">
+        Go to your GitHub repo → <strong>Add file</strong> → <strong>Upload files</strong>
+        → drag your new <code>lyra-lang-X.X.X.zip</code> into the
+        <code>downloads/</code> folder → Commit.
+      </p>
+
+      <h3 style="margin-bottom:8px;font-size:1rem;color:var(--accent);margin-top:20px">
+        Step 2 — Copy this block into versions.html
+      </h3>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:12px">
+        Open <code>versions.html</code> on GitHub, click the pencil icon to edit,
+        then paste this block <em>above</em> the v2.0.0 section and fill in the details:
+      </p>
+
+      <div class="code-snippet"><span class="snippet-comment">&lt;!-- PASTE THIS BLOCK FOR EACH NEW VERSION --&gt;</span>
+&lt;div class="release latest"&gt;
+  &lt;div class="release-header"&gt;
+    &lt;div class="release-version"&gt;<span class="snippet-value">v3.0.0</span>&lt;/div&gt;
+    &lt;div class="release-name"&gt;<span class="snippet-value">Lyra — The Compiler</span>&lt;/div&gt;
+    &lt;span class="tag tag-latest"&gt;Latest&lt;/span&gt;
+    &lt;span class="tag tag-stable"&gt;Stable&lt;/span&gt;
+    &lt;div class="release-date"&gt;<span class="snippet-value">2026</span>&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;p class="release-desc"&gt;
+    <span class="snippet-value">Write your description here.</span>
+  &lt;/p&gt;
+
+  &lt;ul class="feature-list"&gt;
+    &lt;li&gt;<span class="snippet-value">New feature one</span>&lt;/li&gt;
+    &lt;li&gt;<span class="snippet-value">New feature two</span>&lt;/li&gt;
+    &lt;li&gt;<span class="snippet-value">New feature three</span>&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div class="download-row"&gt;
+    &lt;a href="downloads/<span class="snippet-value">lyra-lang-3.0.0.zip</span>"
+       class="dl-btn dl-btn-primary" download&gt;
+      ⬇ <span class="snippet-value">lyra-lang-3.0.0.zip</span>
+    &lt;/a&gt;
+    &lt;a href="downloads/<span class="snippet-value">lyra-lang.vsix</span>"
+       class="dl-btn dl-btn-ghost" download&gt;
+      🧩 VS Code Extension
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+<span class="snippet-comment">&lt;!-- END NEW VERSION BLOCK --&gt;</span></div>
+
+      <p style="color:var(--text-muted);font-size:.85rem;margin-top:16px">
+        Also change the old "Latest" card to use
+        <code>class="release stable"</code> and change its tag from
+        <code>tag-latest</code> to <code>tag-stable</code>.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/lyra-icon.svg" width="44"/>
+      <div>
+        <div class="fn">Lyra Language</div>
+        <div class="ft">"Write code the way you think."</div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="fc"><h5>Language</h5>
+        <a href="index.html#tour">Tour</a>
+        <a href="docs.html">Reference</a>
+        <a href="index.html#examples">Examples</a>
+      </div>
+      <div class="fc"><h5>Tools</h5>
+        <a href="index.html#install">Install</a>
+        <a href="index.html#download">VS Code Extension</a>
+        <a href="game.html">Lyra Quest Game</a>
+      </div>
+      <div class="fc"><h5>Info</h5>
+        <a href="versions.html">All Versions</a>
+        <a href="https://github.com/lyra-lang/lyra">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2025 <strong>Jero W. Grabo</strong> and the Lyra Language Team. MIT License.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Dark gradient background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+
+    <!-- Gold feather gradient -->
+    <linearGradient id="featherGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fffde7"/>
+      <stop offset="30%" style="stop-color:#ffe082"/>
+      <stop offset="70%" style="stop-color:#ffca28"/>
+      <stop offset="100%" style="stop-color:#f9a825"/>
+    </linearGradient>
+
+    <!-- Feather tip gradient -->
+    <linearGradient id="featherTip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe082"/>
+      <stop offset="100%" style="stop-color:#e65100"/>
+    </linearGradient>
+
+    <!-- Nib metal gradient -->
+    <linearGradient id="nibGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#eceff1"/>
+      <stop offset="50%" style="stop-color:#b0bec5"/>
+      <stop offset="100%" style="stop-color:#607d8b"/>
+    </linearGradient>
+
+    <!-- Blue accent badge gradient -->
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4fc3f7"/>
+      <stop offset="100%" style="stop-color:#1565c0"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="4" dy="8" stdDeviation="12"
+                    flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Inner glow on feather -->
+    <filter id="featherGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── Background rounded square ────────────────────────────── -->
+  <rect width="512" height="512" rx="96" ry="96" fill="url(#bgGrad)"/>
+
+  <!-- Subtle inner border glow -->
+  <rect width="512" height="512" rx="96" ry="96" fill="none"
+        stroke="#4fc3f7" stroke-width="2" opacity="0.3"/>
+
+  <!-- ── Main feather shape ────────────────────────────────────── -->
+  <!-- Outer feather vane (right side) -->
+  <path d="
+    M 320 55
+    C 390 45, 440 80, 450 130
+    C 460 175, 445 215, 420 248
+    C 395 280, 360 305, 325 325
+    C 295 342, 260 355, 235 368
+    L 195 415
+    C 188 425, 180 430, 175 425
+    C 170 420, 172 410, 180 400
+    L 210 360
+    C 230 345, 255 330, 278 315
+    C 310 296, 348 272, 375 242
+    C 405 208, 420 170, 415 135
+    C 408 95, 380 65, 345 60
+    Z"
+    fill="url(#featherGold)" filter="url(#shadow)" opacity="0.95"/>
+
+  <!-- Outer feather vane (left side) -->
+  <path d="
+    M 320 55
+    C 345 60, 375 80, 380 115
+    C 385 145, 370 175, 350 200
+    C 328 227, 298 248, 268 265
+    C 250 275, 228 285, 210 295
+    L 195 415
+    C 188 425, 180 430, 175 425
+    C 170 420, 172 410, 180 400
+    L 200 308
+    C 218 296, 240 284, 260 272
+    C 292 253, 325 230, 348 202
+    C 372 172, 382 140, 375 110
+    C 368 78, 345 58, 320 55
+    Z"
+    fill="url(#featherGold)" opacity="0.7"/>
+
+  <!-- Feather highlight sheen -->
+  <path d="
+    M 335 62
+    C 370 62, 405 85, 418 118
+    C 428 145, 420 172, 405 196
+    C 388 222, 360 242, 330 258
+    C 345 242, 368 218, 380 190
+    C 394 160, 396 130, 382 105
+    C 370 82, 350 65, 330 62
+    Z"
+    fill="white" opacity="0.25"/>
+
+  <!-- ── Rachis (spine/quill shaft) ────────────────────────────── -->
+  <path d="M 185 418 Q 230 380 275 340 Q 315 305 352 265 Q 388 225 410 175 Q 428 132 418 90"
+        stroke="#c8860a" stroke-width="3.5" fill="none"
+        stroke-linecap="round" opacity="0.8"/>
+
+  <!-- ── Barbs (left side, pointing up-left from spine) ─────────── -->
+  <g opacity="0.75" stroke="#f9a825" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <path d="M 260 328 Q 242 336 225 348"/>
+    <path d="M 278 312 Q 258 322 238 335"/>
+    <path d="M 295 296 Q 273 307 250 322"/>
+    <path d="M 312 279 Q 288 292 263 308"/>
+    <path d="M 328 261 Q 302 276 275 293"/>
+    <path d="M 342 243 Q 316 260 287 278"/>
+    <path d="M 355 224 Q 328 243 298 263"/>
+    <path d="M 366 204 Q 339 225 308 246"/>
+    <path d="M 376 183 Q 350 206 318 228"/>
+    <path d="M 384 162 Q 358 186 326 209"/>
+    <path d="M 390 140 Q 365 165 332 189"/>
+    <path d="M 394 118 Q 370 143 336 168"/>
+  </g>
+
+  <!-- ── Barbs (right side, pointing down-right from spine) ─────── -->
+  <g opacity="0.65" stroke="#e65100" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <path d="M 260 328 Q 274 318 285 305"/>
+    <path d="M 278 312 Q 293 300 306 286"/>
+    <path d="M 295 296 Q 312 282 326 267"/>
+    <path d="M 312 279 Q 330 264 346 248"/>
+    <path d="M 328 261 Q 348 245 365 228"/>
+    <path d="M 342 243 Q 363 226 380 207"/>
+    <path d="M 355 224 Q 377 205 394 185"/>
+    <path d="M 366 204 Q 388 184 405 163"/>
+  </g>
+
+  <!-- ── Quill nib (metal writing tip) ─────────────────────────── -->
+  <path d="
+    M 183 418
+    L 193 406
+    L 203 418
+    L 196 432
+    Z"
+    fill="url(#nibGrad)"/>
+
+  <!-- Nib slit (center line) -->
+  <line x1="190" y1="410" x2="195" y2="428"
+        stroke="#546e7a" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- ── Ink drop at nib tip ────────────────────────────────────── -->
+  <ellipse cx="192" cy="435" rx="5" ry="7"
+           fill="#4fc3f7" filter="url(#glow)" opacity="0.9"/>
+  <ellipse cx="192" cy="433" rx="3" ry="3"
+           fill="#e3f2fd" opacity="0.8"/>
+
+  <!-- ── .ql badge (bottom right) ──────────────────────────────── -->
+  <circle cx="400" cy="400" r="72" fill="#0d1117" opacity="0.7"/>
+  <circle cx="400" cy="400" r="66" fill="url(#badgeGrad)"/>
+  <circle cx="400" cy="400" r="66" fill="none"
+          stroke="white" stroke-width="2" opacity="0.4"/>
+  <text x="400" y="414"
+        font-family="'SF Mono','Consolas','Courier New',monospace"
+        font-size="32" font-weight="900"
+        fill="white" text-anchor="middle"
+        letter-spacing="-1">.ql</text>
+</svg>

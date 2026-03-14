@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lyra — Write code the way you think.</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/lyra-icon.svg"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/img/lyra-icon.svg" alt="Lyra" class="nav-icon"/>
+      <span>Lyra</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#tour">Language</a></li>
+      <li><a href="#fields">Use Cases</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="game.html">🎮 Lyra Quest</a></li>
+      <li><a href="versions.html">Versions</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="#download" class="btn-nav">Download</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="hero-badge">✨ Version 2.0 — AI, GUI, Database, Blockchain &amp; more</div>
+    <img src="assets/img/lyra-icon.svg" alt="Lyra" class="hero-icon"/>
+    <h1 class="hero-title">Write code<br/><span class="gradient-text">the way you think.</span></h1>
+    <p class="hero-sub">
+      Lyra is the world's most readable programming language.<br/>
+      Only two symbols exist: <code class="ic">,</code> and <code class="ic">.</code>
+    </p>
+    <div class="hero-code">
+      <div class="code-win">
+        <div class="code-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="code-fname">hello.lyr</span>
+        </div>
+        <pre class="code-body" id="heroCode"></pre>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#install" class="btn btn-primary">Get Started Free</a>
+      <a href="#tour" class="btn btn-ghost">See the Language →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="sn">2</span><span class="sl">Symbols only</span></div>
+      <div class="stat"><span class="sn">14+</span><span class="sl">Stdlib modules</span></div>
+      <div class="stat"><span class="sn">10+</span><span class="sl">Fields</span></div>
+      <div class="stat"><span class="sn">Free</span><span class="sl">MIT license</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="sh">
+      <span class="stag">Why Lyra?</span>
+      <h2>A language that speaks your language</h2>
+      <p>No memorizing symbols. No googling syntax. If you can describe it, you can code it.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="fi">📖</div><h3>Plain English Only</h3><p>Every statement reads like a sentence. The only punctuation: comma and period.</p></div>
+      <div class="feat-card"><div class="fi">🎨</div><h3>Professional GUI</h3><p>Dark-mode apps, charts, tables, sliders, progress bars — all in plain English.</p></div>
+      <div class="feat-card"><div class="fi">🤖</div><h3>AI &amp; Machine Learning</h3><p>Naive Bayes, linear regression, k-NN, k-Means — zero external dependencies.</p></div>
+      <div class="feat-card"><div class="fi">🗄️</div><h3>SQLite Built In</h3><p>Create, query, update and delete with natural English sentences.</p></div>
+      <div class="feat-card"><div class="fi">🌐</div><h3>Web &amp; HTTP</h3><p>Fetch URLs, build servers, call REST APIs, parse JSON — dead simple.</p></div>
+      <div class="feat-card"><div class="fi">🔒</div><h3>Cryptography</h3><p>SHA-256, HMAC, base64, password strength — security in plain English.</p></div>
+      <div class="feat-card"><div class="fi">🌍</div><h3>Networking</h3><p>DNS lookup, port scanning, TCP clients, URL parsing.</p></div>
+      <div class="feat-card"><div class="fi">⛓️</div><h3>Blockchain</h3><p>Real proof-of-work mining and chain validation — all readable code.</p></div>
+      <div class="feat-card"><div class="fi">🎮</div><h3>Lyra Quest Game</h3><p>Learn Lyra through 15 interactive GUI challenges from beginner to master.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Install -->
+<section class="section section-dark" id="install">
+  <div class="container">
+    <div class="sh">
+      <span class="stag">Get Started</span>
+      <h2>Install Lyra in 60 seconds</h2>
+    </div>
+    <div class="itabs">
+      <button class="itab active" onclick="showTab('win')">🪟 Windows</button>
+      <button class="itab" onclick="showTab('linux')">🐧 Linux / Kali</button>
+      <button class="itab" onclick="showTab('mac')">🍎 macOS</button>
+    </div>
+    <div class="itab-content active" id="tab-win">
+      <div class="steps">
+        <div class="step"><div class="snum">1</div><div class="sbody"><h4>Download the zip</h4><a href="downloads/lyra-lang-2.0.0.zip" class="btn btn-primary btn-sm" download>Download lyra-lang-2.0.0.zip</a></div></div>
+        <div class="step"><div class="snum">2</div><div class="sbody"><h4>Extract to Downloads folder</h4><p>Right-click → Extract All → <code>C:\Users\YourName\Downloads</code></p></div></div>
+        <div class="step"><div class="snum">3</div><div class="sbody"><h4>Open PowerShell and run</h4><div class="cb"><code>cd "C:\Users\YourName\Downloads\lyra-lang"</code><br/><code>powershell -ExecutionPolicy Bypass -File ".\install.ps1"</code></div></div></div>
+        <div class="step"><div class="snum">4</div><div class="sbody"><h4>Open a NEW terminal and verify</h4><div class="cb"><code>lyra version</code></div></div></div>
+      </div>
+      <div class="trouble">
+        <h4>⚠️ Troubleshooting</h4>
+        <ul>
+          <li><strong>lyra not recognized:</strong> Close terminal completely, open a new one</li>
+          <li><strong>Script blocked:</strong> Use <code>powershell -ExecutionPolicy Bypass -File ".\install.ps1"</code></li>
+          <li><strong>Python not found:</strong> Install from python.org — tick <strong>"Add Python to PATH"</strong></li>
+          <li><strong>Still shows old version:</strong> Run <code>Remove-Item -Recurse -Force "$env:APPDATA\Lyra"</code> then reinstall</li>
+          <li><strong>Space in username errors:</strong> Always wrap paths in double quotes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="itab-content" id="tab-linux">
+      <div class="cb large"><code>chmod +x install.sh &amp;&amp; ./install.sh</code><br/><code>source ~/.bashrc</code><br/><code>lyra version</code><br/><br/><span style="color:#8899b4">Kali Linux:</span><br/><code>sudo apt install python3 python3-pip python3-tk -y</code><br/><code>pip3 install customtkinter matplotlib</code></div>
+    </div>
+    <div class="itab-content" id="tab-mac">
+      <div class="cb large"><code>./install.sh</code><br/><code>source ~/.zshrc</code><br/><code>lyra version</code></div>
+    </div>
+  </div>
+</section>
+
+<!-- Language Tour -->
+<section class="section" id="tour">
+  <div class="container">
+    <div class="sh">
+      <span class="stag">Language Tour</span>
+      <h2>Everything in plain English</h2>
+    </div>
+    <div class="tour-grid">
+      <div class="tour-item"><h4>Variables</h4><pre>let name be "Alice".
+let age be 25.
+let active be yes.
+set age to 26.</pre></div>
+      <div class="tour-item"><h4>Arithmetic</h4><pre>let total be price times qty.
+let half be total divided by 2.
+let rem be total mod 7.
+let root be square root of 144.</pre></div>
+      <div class="tour-item"><h4>Conditions</h4><pre>if age is at least 18.
+  say "Adult.".
+else if age is 16.
+  say "Almost!".
+else.
+  say "Minor.".
+end if.</pre></div>
+      <div class="tour-item"><h4>Loops</h4><pre>repeat 5 times.
+  say "Hello!".
+end repeat.
+
+for each item in items.
+  say item.
+end for.</pre></div>
+      <div class="tour-item"><h4>Functions</h4><pre>define greet taking name.
+  say "Hello, {name}!".
+end define.
+
+greet with "Alice".</pre></div>
+      <div class="tour-item"><h4>Lists &amp; Maps</h4><pre>let fruits be a list of
+  "apple", "banana".
+let p be a map with
+  "name" as "Alice".</pre></div>
+      <div class="tour-item"><h4>HTTP &amp; JSON</h4><pre>let data be get
+  "https://api.example.com".
+let json be parse data as json.
+say json at "field".</pre></div>
+      <div class="tour-item"><h4>Database</h4><pre>connect to database "app.db" as db.
+execute "INSERT INTO t VALUES (?)"
+  on db with a list of "hi".
+let rows be query db
+  with "SELECT * FROM t".</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section section-dark" id="fields">
+  <div class="container">
+    <div class="sh"><span class="stag">Use Cases</span><h2>One language, infinite applications</h2></div>
+    <div class="fields-grid">
+      <div class="field-card"><div class="field-top"><span>🤖</span><h3>AI &amp; ML</h3></div><ul><li>Naive Bayes classifiers</li><li>Linear regression</li><li>k-NN classification</li><li>k-Means clustering</li><li>Python sklearn interop</li></ul><div class="fex"><code>let model be trainbayes with emails, labels.<br/>let result be predictbayes with model, text.</code></div></div>
+      <div class="field-card"><div class="field-top"><span>📊</span><h3>Data Science</h3></div><ul><li>CSV load and filter</li><li>Mean, median, std dev</li><li>Normalization and scaling</li><li>Bar, line, pie charts</li><li>Data pipeline scripts</li></ul><div class="fex"><code>let rows be readcsv with "data.csv".<br/>let avg be average with salaries.</code></div></div>
+      <div class="field-card"><div class="field-top"><span>🖥️</span><h3>Desktop Apps</h3></div><ul><li>Dark and light themes</li><li>Charts: bar, line, pie</li><li>Tables, progress bars</li><li>Dropdowns, sliders</li><li>Toast notifications</li></ul><div class="fex"><code>create a bar chart named myChart titled "Revenue".<br/>set data of myChart to months, values.</code></div></div>
+      <div class="field-card"><div class="field-top"><span>🔒</span><h3>Cybersecurity</h3></div><ul><li>SHA-256, MD5 hashing</li><li>HMAC signing</li><li>Password strength check</li><li>Port scanning</li><li>DNS lookup tools</li></ul><div class="fex"><code>let h be hash with "password".<br/>let s be passwordstrength with "my_pwd".</code></div></div>
+      <div class="field-card"><div class="field-top"><span>🌐</span><h3>Web Dev</h3></div><ul><li>HTTP GET and POST</li><li>JSON API clients</li><li>HTTP servers</li><li>REST API building</li><li>URL tools</li></ul><div class="fex"><code>addroute with "/api", "handleApi".<br/>start server 8080.</code></div></div>
+      <div class="field-card"><div class="field-top"><span>⛓️</span><h3>Blockchain</h3></div><ul><li>Proof-of-work mining</li><li>Block validation</li><li>Transaction recording</li><li>Chain integrity</li><li>Educational crypto</li></ul><div class="fex"><code>let hash be addblock with "chain", "tx".<br/>let valid be validateblockchain with "chain".</code></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Examples -->
+<section class="section" id="examples">
+  <div class="container">
+    <div class="sh"><span class="stag">Examples</span><h2>See Lyra in action</h2>
+    <p>Real programs — only two symbols used in all of them.</p></div>
+    <div class="ex-tabs">
+      <button class="extab active" onclick="showEx('ex1')">AI Sentiment</button>
+      <button class="extab" onclick="showEx('ex2')">Sales Dashboard</button>
+      <button class="extab" onclick="showEx('ex3')">Blockchain</button>
+      <button class="extab" onclick="showEx('ex4')">Password Security</button>
+      <button class="extab" onclick="showEx('ex5')">Data Analysis</button>
+      <button class="extab" onclick="showEx('ex6')">Live API</button>
+      <button class="extab" onclick="showEx('ex7')">Classes and Objects</button>
+    </div>
+    <div class="ex-panels">
+
+      <!-- ── Ex 1: AI Sentiment Analyzer ──────────────────────────── -->
+      <div class="ex-panel active" id="ex1">
+        <div class="code-win">
+          <div class="code-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="code-fname">sentiment.lyr</span></div>
+          <pre class="code-body"><span class="cmt">note AI Sentiment Analyzer.</span>
+<span class="cmt">note Trains on examples, classifies new text.</span>
+<span class="mod">use</span> ml.
+
+<span class="kw">let</span> reviews <span class="kw">be</span> an empty list.
+<span class="kw">add</span> <span class="str">"brilliant product love it"</span> to reviews.
+<span class="kw">add</span> <span class="str">"absolutely outstanding quality"</span> to reviews.
+<span class="kw">add</span> <span class="str">"terrible waste of money awful"</span> to reviews.
+<span class="kw">add</span> <span class="str">"broke on first day horrible"</span> to reviews.
+<span class="kw">add</span> <span class="str">"decent nothing special"</span> to reviews.
+
+<span class="kw">let</span> labels <span class="kw">be</span> a list of
+  <span class="str">"positive"</span>, <span class="str">"positive"</span>,
+  <span class="str">"negative"</span>, <span class="str">"negative"</span>,
+  <span class="str">"neutral"</span>.
+
+<span class="kw">let</span> model <span class="kw">be</span> trainbayes with reviews, labels.
+
+<span class="kw">let</span> tests <span class="kw">be</span> a list of
+  <span class="str">"amazing fast delivery loved it"</span>,
+  <span class="str">"stopped working after one week"</span>,
+  <span class="str">"it arrived on time"</span>.
+
+<span class="kw">for each</span> text <span class="kw">in</span> tests.
+  <span class="kw">let</span> verdict <span class="kw">be</span> predictbayes with model, text.
+  <span class="kw">say</span> verdict <span class="kw">followed by</span> <span class="str">"  -- "</span>
+    <span class="kw">followed by</span> text.
+<span class="end">end for</span>.</pre>
+        </div>
+        <div class="ex-out">
+          <div class="out-hdr">Output</div>
+          <pre>positive  -- amazing fast delivery loved it
+negative  -- stopped working after one week
+neutral   -- it arrived on time</pre>
+          <div class="out-note">Trained from scratch. No external libraries.</div>
+        </div>
+      </div>
+
+      <!-- ── Ex 2: Sales Dashboard GUI ────────────────────────────── -->
+      <div class="ex-panel" id="ex2">
+        <div class="code-win">
+          <div class="code-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="code-fname">dashboard.lyr</span></div>
+          <pre class="code-body"><span class="cmt">note Professional Sales Dashboard.</span>
+<span class="cmt">note Dark GUI with live charts and table.</span>
+<span class="mod">use</span> gui.
+
+<span class="kw">set</span> theme <span class="kw">to</span> <span class="str">"dark"</span>.
+<span class="kw">open</span> a window titled <span class="str">"Sales Dashboard 2025"</span>
+  with width 900, height 620.
+
+<span class="kw">create</span> a label named titleLabel
+  saying <span class="str">"Sales Dashboard 2025"</span>.
+
+<span class="kw">create</span> a bar chart named revenueChart
+  titled <span class="str">"Monthly Revenue in thousands"</span>.
+
+<span class="kw">let</span> months <span class="kw">be</span> a list of
+  <span class="str">"Jan"</span>, <span class="str">"Feb"</span>, <span class="str">"Mar"</span>,
+  <span class="str">"Apr"</span>, <span class="str">"May"</span>, <span class="str">"Jun"</span>.
+<span class="kw">let</span> revenue <span class="kw">be</span> a list of
+  85, 92, 78, 105, 118, 142.
+
+<span class="kw">set</span> data of revenueChart to months, revenue.
+
+<span class="kw">create</span> a line chart named trendChart
+  titled <span class="str">"Weekly Orders"</span>.
+
+<span class="kw">create</span> a table named topProducts
+  with columns <span class="str">"Product"</span>, <span class="str">"Units"</span>, <span class="str">"Revenue"</span>.
+
+<span class="kw">add</span> row <span class="str">"Pro Widget X"</span>, 342, 51300
+  to topProducts.
+<span class="kw">add</span> row <span class="str">"Smart Gadget Y"</span>, 285, 42750
+  to topProducts.
+
+<span class="kw">create</span> a progress bar named salesTarget.
+<span class="kw">show</span> window.
+<span class="kw">set</span> progress of salesTarget to 87.</pre>
+        </div>
+        <div class="ex-out">
+          <div class="out-hdr">Result</div>
+          <div class="mock-win">
+            <div class="mock-tb">Sales Dashboard 2025</div>
+            <div class="mock-body" style="padding:16px;gap:10px">
+              <div style="font-size:.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px">Monthly Revenue</div>
+              <div style="display:flex;align-items:flex-end;gap:5px;height:60px">
+                <div style="background:var(--primary);width:14px;height:51%;border-radius:3px 3px 0 0;opacity:.9"></div>
+                <div style="background:var(--primary);width:14px;height:55%;border-radius:3px 3px 0 0;opacity:.9"></div>
+                <div style="background:var(--primary);width:14px;height:47%;border-radius:3px 3px 0 0;opacity:.9"></div>
+                <div style="background:var(--primary);width:14px;height:63%;border-radius:3px 3px 0 0;opacity:.9"></div>
+                <div style="background:var(--primary);width:14px;height:71%;border-radius:3px 3px 0 0;opacity:.9"></div>
+                <div style="background:var(--accent);width:14px;height:85%;border-radius:3px 3px 0 0;"></div>
+              </div>
+              <div style="display:flex;gap:5px;font-size:.62rem;color:var(--text-muted)">
+                <span style="width:14px;text-align:center">J</span><span style="width:14px;text-align:center">F</span><span style="width:14px;text-align:center">M</span><span style="width:14px;text-align:center">A</span><span style="width:14px;text-align:center">M</span><span style="width:14px;text-align:center">J</span>
+              </div>
+              <div style="width:100%;background:var(--surface2);border-radius:6px;height:8px;margin-top:4px">
+                <div style="background:var(--primary);width:87%;height:100%;border-radius:6px"></div>
+              </div>
+              <div style="font-size:.7rem;color:var(--text-muted)">Target: 87%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Ex 3: Blockchain ──────────────────────────────────────── -->
+      <div class="ex-panel" id="ex3">
+        <div class="code-win">
+          <div class="code-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="code-fname">ledger.lyr</span></div>
+          <pre class="code-body"><span class="cmt">note Blockchain transaction ledger.</span>
+<span class="cmt">note Real proof-of-work mining.</span>
+<span class="mod">use</span> blockchain.
+
+<span class="kw">let</span> setup <span class="kw">be</span> newblockchain with <span class="str">"lyrachain"</span>.
+<span class="kw">say</span> setup.
+<span class="kw">say</span> <span class="str">""</span>.
+
+<span class="kw">say</span> <span class="str">"Mining transactions..."</span>.
+
+<span class="kw">let</span> h1 <span class="kw">be</span> addblock with
+  <span class="str">"lyrachain"</span>, <span class="str">"Alice sends 50 LYR to Bob"</span>.
+<span class="kw">say</span> <span class="str">"Block 1 mined"</span>.
+<span class="kw">say</span> <span class="str">"  Hash  "</span> followed by h1.
+
+<span class="kw">let</span> h2 <span class="kw">be</span> addblock with
+  <span class="str">"lyrachain"</span>, <span class="str">"Bob sends 20 LYR to Carol"</span>.
+<span class="kw">say</span> <span class="str">"Block 2 mined"</span>.
+<span class="kw">say</span> <span class="str">"  Hash  "</span> followed by h2.
+
+<span class="kw">let</span> valid <span class="kw">be</span> validateblockchain with <span class="str">"lyrachain"</span>.
+<span class="kw">let</span> length <span class="kw">be</span> blocklength with <span class="str">"lyrachain"</span>.
+<span class="kw">say</span> <span class="str">""</span>.
+<span class="kw">say</span> <span class="str">"Chain integrity  "</span> followed by valid.
+<span class="kw">say</span> <span class="str">"Total blocks     "</span> followed by length.
+
+<span class="kw">let</span> chain <span class="kw">be</span> getblockchain with <span class="str">"lyrachain"</span>.
+<span class="kw">for each</span> block <span class="kw">in</span> chain.
+  <span class="kw">let</span> idx <span class="kw">be</span> block at <span class="str">"index"</span>.
+  <span class="kw">let</span> data <span class="kw">be</span> block at <span class="str">"data"</span>.
+  <span class="kw">say</span> <span class="str">"Block "</span> followed by idx
+    followed by <span class="str">"  "</span> followed by data.
+<span class="end">end for</span>.</pre>
+        </div>
+        <div class="ex-out">
+          <div class="out-hdr">Output</div>
+          <pre>Blockchain "lyrachain" created
+
+Mining transactions...
+Block 1 mined
+  Hash  00a3f9c8b1...
+Block 2 mined
+  Hash  00b72e41d8...
+
+Chain integrity  True
+Total blocks     3
+Block 0  Genesis Block
+Block 1  Alice sends 50 LYR to Bob
+Block 2  Bob sends 20 LYR to Carol</pre>
+        </div>
+      </div>
+
+      <!-- ── Ex 4: Password Security Tool ─────────────────────────── -->
+      <div class="ex-panel" id="ex4">
+        <div class="code-win">
+          <div class="code-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="code-fname">security.lyr</span></div>
+          <pre class="code-body"><span class="cmt">note Password security and hashing tool.</span>
+<span class="mod">use</span> crypto.
+
+<span class="kw">say</span> <span class="str">"Password Security Tool"</span>.
+<span class="kw">say</span> <span class="str">""</span>.
+
+<span class="cmt">note Hash a password securely</span>
+<span class="kw">let</span> password <span class="kw">be</span> <span class="str">"mySecretPass99"</span>.
+<span class="kw">let</span> hashed <span class="kw">be</span> hash with password.
+<span class="kw">say</span> <span class="str">"Original   "</span> followed by password.
+<span class="kw">say</span> <span class="str">"SHA256     "</span> followed by hashed.
+<span class="kw">say</span> <span class="str">""</span>.
+
+<span class="cmt">note Check password strength</span>
+<span class="kw">let</span> passwords <span class="kw">be</span> a list of
+  <span class="str">"abc"</span>,
+  <span class="str">"password123"</span>,
+  <span class="str">"Tr0ub4dor"</span>,
+  <span class="str">"Zx9mK2qL8vN"</span>.
+
+<span class="kw">say</span> <span class="str">"Strength Analysis"</span>.
+<span class="kw">for each</span> pwd <span class="kw">in</span> passwords.
+  <span class="kw">let</span> result <span class="kw">be</span> passwordstrength with pwd.
+  <span class="kw">let</span> rating <span class="kw">be</span> result at <span class="str">"rating"</span>.
+  <span class="kw">let</span> score <span class="kw">be</span> result at <span class="str">"score"</span>.
+  <span class="kw">say</span> <span class="str">"  "</span> followed by pwd
+    followed by <span class="str">"  "</span> followed by rating
+    followed by <span class="str">"  score "</span> followed by score.
+<span class="end">end for</span>.
+<span class="kw">say</span> <span class="str">""</span>.
+
+<span class="cmt">note Generate a secure token</span>
+<span class="kw">let</span> secure_token <span class="kw">be</span> token.
+<span class="kw">say</span> <span class="str">"Secure token  "</span> followed by secure_token.</pre>
+        </div>
+        <div class="ex-out">
+          <div class="out-hdr">Output</div>
+          <pre>Password Security Tool
+
+Original   mySecretPass99
+SHA256     7c4a8d09ca...
+
+Strength Analysis
+  abc           Weak    score 10
+  password123   Fair    score 40
+  Tr0ub4dor     Good    score 65
+  Zx9mK2qL8vN  Strong  score 90
+
+Secure token  3f8a92c1d7e4b056...</pre>
+        </div>
+      </div>
+
+      <!-- ── Ex 5: Data Analysis Pipeline ─────────────────────────── -->
+      <div class="ex-panel" id="ex5">
+        <div class="code-win">
+          <div class="code-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="code-fname">analysis.lyr</span></div>
+          <pre class="code-body"><span class="cmt">note Data science pipeline.</span>
+<span class="cmt">note Loads CSV, computes stats, finds insights.</span>
+<span class="mod">use</span> data.
+
+<span class="cmt">note Salaries dataset</span>
+<span class="kw">let</span> salaries <span class="kw">be</span> a list of
+  75000, 92000, 68000, 115000,
+  71000, 88000, 65000, 125000,
+  55000, 98000, 82000, 145000.
+
+<span class="kw">let</span> count <span class="kw">be</span> the size of salaries.
+<span class="kw">let</span> total <span class="kw">be</span> the sum of salaries.
+<span class="kw">let</span> avg <span class="kw">be</span> average with salaries.
+<span class="kw">let</span> med <span class="kw">be</span> median with salaries.
+<span class="kw">let</span> highest <span class="kw">be</span> the maximum of salaries.
+<span class="kw">let</span> lowest <span class="kw">be</span> the minimum of salaries.
+<span class="kw">let</span> spread <span class="kw">be</span> stddev with salaries.
+<span class="kw">let</span> scaled <span class="kw">be</span> normalize with salaries.
+
+<span class="kw">say</span> <span class="str">"Salary Report"</span>.
+<span class="kw">say</span> <span class="str">"  Records   "</span> followed by count.
+<span class="kw">say</span> <span class="str">"  Average   "</span> followed by avg.
+<span class="kw">say</span> <span class="str">"  Median    "</span> followed by med.
+<span class="kw">say</span> <span class="str">"  Highest   "</span> followed by highest.
+<span class="kw">say</span> <span class="str">"  Lowest    "</span> followed by lowest.
+<span class="kw">say</span> <span class="str">"  Std Dev   "</span> followed by spread.
+<span class="kw">say</span> <span class="str">""</span>.
+
+<span class="cmt">note Find top earners above 90000</span>
+<span class="kw">say</span> <span class="str">"Above 90000"</span>.
+<span class="kw">for each</span> s <span class="kw">in</span> salaries.
+  <span class="kw">if</span> s <span class="op">is at least</span> 90000.
+    <span class="kw">say</span> <span class="str">"  "</span> followed by s.
+  <span class="end">end if</span>.
+<span class="end">end for</span>.</pre>
+        </div>
+        <div class="ex-out">
+          <div class="out-hdr">Output</div>
+          <pre>Salary Report
+  Records   12
+  Average   89916.67
+  Median    90000.0
+  Highest   145000
+  Lowest    55000
+  Std Dev   24891.3
+
+Above 90000
+  92000
+  115000
+  98000
+  125000
+  145000</pre>
+        </div>
+      </div>
+
+      <!-- ── Ex 6: Live API (GitHub) ───────────────────────────────── -->
+      <div class="ex-panel" id="ex6">
+        <div class="code-win">
+          <div class="code-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="code-fname">github_stats.lyr</span></div>
+          <pre class="code-body"><span class="cmt">note Live GitHub API client.</span>
+<span class="cmt">note Fetches real data from the internet.</span>
+
+<span class="kw">ask</span> <span class="str">"Enter a GitHub repo, e.g. torvalds slash linux."</span>
+  into repo.
+
+<span class="kw">let</span> base <span class="kw">be</span> <span class="str">"https://api.github.com/repos/"</span>.
+<span class="kw">let</span> url <span class="kw">be</span> base joined with repo.
+
+<span class="kw">say</span> <span class="str">"Fetching live data..."</span>.
+
+try.
+  <span class="kw">let</span> response <span class="kw">be</span> get url.
+  <span class="kw">let</span> data <span class="kw">be</span> parse response as json.
+
+  <span class="kw">let</span> name <span class="kw">be</span> data at <span class="str">"full_name"</span>.
+  <span class="kw">let</span> stars <span class="kw">be</span> data at <span class="str">"stargazers_count"</span>.
+  <span class="kw">let</span> forks <span class="kw">be</span> data at <span class="str">"forks_count"</span>.
+  <span class="kw">let</span> lang <span class="kw">be</span> data at <span class="str">"language"</span>.
+  <span class="kw">let</span> issues <span class="kw">be</span> data at <span class="str">"open_issues_count"</span>.
+  <span class="kw">let</span> desc <span class="kw">be</span> data at <span class="str">"description"</span>.
+
+  <span class="kw">say</span> <span class="str">""</span>.
+  <span class="kw">say</span> <span class="str">"Repository  "</span> followed by name.
+  <span class="kw">say</span> <span class="str">"Language    "</span> followed by lang.
+  <span class="kw">say</span> <span class="str">"Stars       "</span> followed by stars.
+  <span class="kw">say</span> <span class="str">"Forks       "</span> followed by forks.
+  <span class="kw">say</span> <span class="str">"Open issues "</span> followed by issues.
+  <span class="kw">say</span> <span class="str">"Description "</span> followed by desc.
+
+catch err.
+  <span class="kw">say</span> <span class="str">"Could not fetch. Check repo name."</span>.
+end try.</pre>
+        </div>
+        <div class="ex-out">
+          <div class="out-hdr">Output — live result</div>
+          <pre>Fetching live data...
+
+Repository   torvalds/linux
+Language     C
+Stars        185000
+Forks        54000
+Open issues  0
+Description  Linux kernel source tree</pre>
+          <div class="out-note">Real data from GitHub API. No API key needed.</div>
+        </div>
+      </div>
+
+      <!-- ── Ex 7: Classes and Objects ────────────────────────────── -->
+      <div class="ex-panel" id="ex7">
+        <div class="code-win">
+          <div class="code-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="code-fname">classes.lyr</span></div>
+          <pre class="code-body"><span class="cmt">note Object-oriented programming in plain English.</span>
+<span class="cmt">note Classes, inheritance, methods.</span>
+
+<span class="kw">define class</span> BankAccount.
+  it has owner, balance.
+
+  <span class="kw">define</span> create taking owner, opening_balance.
+    <span class="kw">set its</span> owner to owner.
+    <span class="kw">set its</span> balance to opening_balance.
+  <span class="end">end define</span>.
+
+  <span class="kw">define</span> deposit taking amount.
+    <span class="kw">add</span> amount to its balance.
+    <span class="kw">say</span> <span class="str">"Deposited "</span> followed by amount.
+  <span class="end">end define</span>.
+
+  <span class="kw">define</span> withdraw taking amount.
+    <span class="kw">if</span> amount <span class="op">is greater than</span> its balance.
+      <span class="kw">say</span> <span class="str">"Insufficient funds."</span>.
+      <span class="kw">return</span>.
+    <span class="end">end if</span>.
+    <span class="kw">subtract</span> amount from its balance.
+    <span class="kw">say</span> <span class="str">"Withdrew "</span> followed by amount.
+  <span class="end">end define</span>.
+
+  <span class="kw">define</span> show_balance.
+    <span class="kw">say</span> its owner followed by
+      <span class="str">"  balance  "</span> followed by its balance.
+  <span class="end">end define</span>.
+<span class="end">end class</span>.
+
+<span class="kw">let</span> acc <span class="kw">be</span> a new BankAccount
+  with <span class="str">"Alice"</span>, 1000.
+<span class="kw">call</span> deposit on acc with 500.
+<span class="kw">call</span> withdraw on acc with 200.
+<span class="kw">call</span> withdraw on acc with 5000.
+<span class="kw">call</span> show_balance on acc.</pre>
+        </div>
+        <div class="ex-out">
+          <div class="out-hdr">Output</div>
+          <pre>Deposited 500
+Withdrew 200
+Insufficient funds.
+Alice  balance  1300</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Download -->
+<section class="section section-dark" id="download">
+  <div class="container">
+    <div class="sh"><span class="stag">Download</span><h2>Get Lyra 2.0 — Free Forever</h2><p>MIT licensed. Open source.</p></div>
+    <div class="dl-grid">
+      <div class="dl-card primary"><div class="dli">🪟</div><h3>Windows</h3><p>Full package with installer, extension, examples and game.</p><a href="downloads/lyra-lang-2.0.0.zip" class="btn btn-primary" download>Download .zip</a><div class="dl-sz">~300 KB</div></div>
+      <div class="dl-card"><div class="dli">🐧</div><h3>Linux / Kali</h3><p>Same package. Runs on Ubuntu, Debian, Kali, Arch.</p><a href="downloads/lyra-lang-2.0.0.zip" class="btn btn-ghost" download>Download .zip</a></div>
+      <div class="dl-card"><div class="dli">🍎</div><h3>macOS</h3><p>Works on macOS 12+ with Python 3.10+</p><a href="downloads/lyra-lang-2.0.0.zip" class="btn btn-ghost" download>Download .zip</a></div>
+      <div class="dl-card"><div class="dli">🧩</div><h3>VS Code Extension</h3><p>Syntax highlighting, IntelliSense, feather icon, run button.</p><a href="downloads/lyra-lang.vsix" class="btn btn-ghost" download>Download .vsix</a></div>
+    </div>
+    <div class="pip-row"><p>Or install with pip:</p><div class="cb inline"><code>pip install lyra-lang</code></div></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/lyra-icon.svg" width="44"/>
+      <div><div class="fn">Lyra Language</div><div class="ft">"Write code the way you think."</div></div>
+    </div>
+    <div class="footer-links">
+      <div class="fc"><h5>Language</h5><a href="#tour">Tour</a><a href="docs.html">Reference</a><a href="#examples">Examples</a></div>
+      <div class="fc"><h5>Tools</h5><a href="#install">Install</a><a href="#download">VS Code Extension</a><a href="game.html">Lyra Quest Game</a></div>
+      <div class="fc"><h5>Info</h5><a href="versions.html">Versions</a><a href="https://github.com/lyra-lang/lyra">GitHub</a><a href="LICENSE">MIT License</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>Copyright © 2025 <strong>Jero W. Grabo</strong> and the Lyra Language Team. MIT License.</p></div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lyra — Deploy Your Website Free</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/lyra-icon.svg"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .deploy-section { max-width: 780px; margin: 0 auto; }
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .step-card:hover { border-color: var(--primary); }
+    .big-num {
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      background: var(--primary);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+    .step-card h3 { margin-bottom: 12px; font-size: 1.1rem; }
+    .step-card p  { color: var(--text-muted); margin-bottom: 12px; line-height: 1.7; }
+    .step-card ul { color: var(--text-muted); padding-left: 20px; line-height: 1.9; }
+    .step-card code {
+      background: var(--surface2);
+      padding: 2px 7px;
+      border-radius: 5px;
+      color: var(--accent);
+      font-family: monospace;
+      font-size: .88em;
+    }
+    .cmd {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-family: monospace;
+      font-size: .9rem;
+      color: var(--accent);
+      margin: 10px 0;
+      display: block;
+    }
+    .warn {
+      background: rgba(249,168,37,.08);
+      border: 1px solid rgba(249,168,37,.25);
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: var(--gold);
+      font-size: .88rem;
+      margin: 12px 0;
+    }
+    .success-box {
+      background: rgba(0,184,148,.08);
+      border: 1px solid rgba(0,184,148,.25);
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: var(--success);
+      font-size: .88rem;
+      margin: 12px 0;
+    }
+    .img-placeholder {
+      background: var(--surface2);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: .88rem;
+      margin: 12px 0;
+    }
+    kbd {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-family: monospace;
+      font-size: .85em;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/img/lyra-icon.svg" alt="Lyra" class="nav-icon"/>
+      <span>Lyra</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="versions.html">Versions</a></li>
+      <li><a href="game.html">🎮 Lyra Quest</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="deploy.html">🚀 Go Live</a></li><li><a href="index.html#download" class="btn-nav">Download</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </div>
+</nav>
+
+<section class="section-dark" style="padding:140px 0 60px;text-align:center;position:relative">
+  <div class="hero-bg"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="hero-badge">🚀 Free Hosting Guide</div>
+    <h1 class="hero-title" style="font-size:2.8rem">Get Your Website Live</h1>
+    <p style="color:var(--text-muted);font-size:1.05rem;max-width:500px;margin:0 auto">
+      Host your Lyra website on GitHub Pages — completely free, forever.
+      Takes about 10 minutes start to finish.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container deploy-section">
+
+    <div class="step-card">
+      <div class="big-num">1</div>
+      <h3>Create a free GitHub account</h3>
+      <p>If you already have one, skip to step 2.</p>
+      <ul>
+        <li>Go to <strong>github.com</strong> and click <strong>Sign up</strong></li>
+        <li>Enter your email address and create a password</li>
+        <li>Choose a username — this becomes part of your URL, so pick something you like.
+            Something like <code>jerowgrabo</code> or <code>lyra-lang</code> works great</li>
+        <li>Verify your email when GitHub sends the confirmation</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="big-num">2</div>
+      <h3>Create a new repository</h3>
+      <p>A repository is just a folder on GitHub that holds your files.</p>
+      <ul>
+        <li>Once logged in, click the <strong>+</strong> icon in the top right corner</li>
+        <li>Click <strong>New repository</strong></li>
+        <li>Repository name: type <code>lyra-lang</code></li>
+        <li>Description: <code>Lyra — Write code the way you think.</code></li>
+        <li>Make sure <strong>Public</strong> is selected — required for free hosting</li>
+        <li>Tick <strong>Add a README file</strong></li>
+        <li>Click the green <strong>Create repository</strong> button</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="big-num">3</div>
+      <h3>Upload the website files</h3>
+      <p>
+        Extract <code>lyra-website.zip</code> on your computer first.
+        Open the extracted folder — you will see <code>index.html</code>,
+        <code>assets/</code>, <code>downloads/</code>, and other files.
+      </p>
+      <ul>
+        <li>On your new GitHub repo page, click <strong>Add file</strong> → <strong>Upload files</strong></li>
+        <li>Open the extracted website folder in File Explorer</li>
+        <li>Press <kbd>Ctrl+A</kbd> to select everything inside it</li>
+        <li>Drag all the files and folders into the GitHub upload box in your browser</li>
+        <li>Wait for all files to show green checkmarks</li>
+        <li>At the bottom, in the commit message box type: <code>Add Lyra website</code></li>
+        <li>Click <strong>Commit changes</strong></li>
+      </ul>
+      <div class="warn">
+        ⚠ Make sure you upload the <em>contents</em> of the website folder,
+        not the folder itself. GitHub should show <code>index.html</code>
+        at the root of your repo, not inside a subfolder.
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="big-num">4</div>
+      <h3>Upload your download files</h3>
+      <p>
+        This makes the download buttons on the website actually work.
+        You need to upload your zip files into the <code>downloads/</code> folder.
+      </p>
+      <ul>
+        <li>On your repo, click the <code>downloads</code> folder</li>
+        <li>Click <strong>Add file</strong> → <strong>Upload files</strong></li>
+        <li>Drag in these files from your computer:
+          <ul>
+            <li><code>lyra-lang-2.0.0.zip</code> — the current Lyra release</li>
+            <li><code>lyra-lang.vsix</code> — the VS Code extension</li>
+            <li><code>quill-lang-1.0.0.zip</code> — the original v1.0.0 release
+                (find this in your Downloads folder from the first session)</li>
+          </ul>
+        </li>
+        <li>Click <strong>Commit changes</strong></li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="big-num">5</div>
+      <h3>Turn on GitHub Pages</h3>
+      <p>This is the step that makes your site go live.</p>
+      <ul>
+        <li>On your repo page, click the <strong>Settings</strong> tab at the top</li>
+        <li>In the left sidebar, scroll down and click <strong>Pages</strong></li>
+        <li>Under <strong>Source</strong>, click the dropdown showing <em>None</em></li>
+        <li>Select <strong>Deploy from a branch</strong></li>
+        <li>Under <strong>Branch</strong>, select <strong>main</strong></li>
+        <li>Make sure the folder shows <strong>/ (root)</strong></li>
+        <li>Click <strong>Save</strong></li>
+      </ul>
+      <div class="success-box">
+        ✓ After saving, GitHub will show a message at the top of the Pages settings:
+        <br/><strong>"Your site is live at https://YOUR-USERNAME.github.io/lyra-lang/"</strong>
+        <br/>It takes 1–2 minutes to go live. If you see a 404, wait a moment and refresh.
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="big-num">6</div>
+      <h3>Your site is live</h3>
+      <p>Visit your site at:</p>
+      <code class="cmd">https://YOUR-USERNAME.github.io/lyra-lang/</code>
+      <p>
+        Replace <code>YOUR-USERNAME</code> with the GitHub username you created in Step 1.
+        For example if your username is <code>jerowgrabo</code>, your site is at:
+      </p>
+      <code class="cmd">https://jerowgrabo.github.io/lyra-lang/</code>
+      <p>Share this link — anyone in the world can visit it and download Lyra.</p>
+    </div>
+
+    <div class="step-card">
+      <div class="big-num">7</div>
+      <h3>Get a custom domain — optional but free to set up</h3>
+      <p>
+        If you want <code>lyra-lang.org</code> instead of the long GitHub URL,
+        you need to buy a domain. This is the only part that costs money — about
+        <strong>$10–15 per year</strong>. Namecheap.com is a good place to buy one.
+      </p>
+      <ul>
+        <li>Buy your domain at <strong>namecheap.com</strong></li>
+        <li>In Namecheap, go to <strong>Domain List</strong> → click <strong>Manage</strong>
+            next to your domain → click <strong>Advanced DNS</strong></li>
+        <li>Add a new record:
+          <ul>
+            <li><strong>Type:</strong> CNAME</li>
+            <li><strong>Host:</strong> <code>@</code></li>
+            <li><strong>Value:</strong> <code>YOUR-USERNAME.github.io</code></li>
+          </ul>
+        </li>
+        <li>Back on GitHub → Settings → Pages → under <strong>Custom domain</strong>,
+            type your domain (e.g. <code>lyra-lang.org</code>) → click Save</li>
+        <li>Tick <strong>Enforce HTTPS</strong> — GitHub gives you a free SSL certificate</li>
+        <li>Wait 5–30 minutes for DNS to update</li>
+      </ul>
+      <div class="success-box">
+        ✓ After DNS updates, anyone can visit <strong>lyra-lang.org</strong>
+        and get the full site with HTTPS — at no ongoing cost beyond the domain renewal.
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="big-num">8</div>
+      <h3>Update the site in the future</h3>
+      <p>Whenever you want to change something — add a new version, update text, fix a typo:</p>
+      <ul>
+        <li>Go to your GitHub repo at <code>github.com/YOUR-USERNAME/lyra-lang</code></li>
+        <li>Click the file you want to change (e.g. <code>versions.html</code>)</li>
+        <li>Click the <strong>pencil icon</strong> (Edit) in the top right</li>
+        <li>Make your changes</li>
+        <li>Click <strong>Commit changes</strong> at the bottom</li>
+        <li>Your site updates within about <strong>60 seconds</strong></li>
+      </ul>
+      <p>For uploading new files (like a new version zip), click <strong>Add file → Upload files</strong> inside the <code>downloads/</code> folder.</p>
+    </div>
+
+    <!-- Summary box -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;margin-top:12px;text-align:center">
+      <h2 style="margin-bottom:16px">Summary</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:24px">
+        <div><div style="font-size:2rem;margin-bottom:6px">💰</div><div style="font-weight:700">Cost</div><div style="color:var(--success);font-size:.9rem">Free forever<br/>(domain optional)</div></div>
+        <div><div style="font-size:2rem;margin-bottom:6px">⚡</div><div style="font-weight:700">Speed</div><div style="color:var(--text-muted);font-size:.9rem">Live in under<br/>10 minutes</div></div>
+        <div><div style="font-size:2rem;margin-bottom:6px">🔒</div><div style="font-weight:700">HTTPS</div><div style="color:var(--success);font-size:.9rem">Free SSL<br/>certificate</div></div>
+        <div><div style="font-size:2rem;margin-bottom:6px">🌍</div><div style="font-weight:700">Reach</div><div style="color:var(--text-muted);font-size:.9rem">Accessible<br/>worldwide</div></div>
+        <div><div style="font-size:2rem;margin-bottom:6px">🔄</div><div style="font-weight:700">Updates</div><div style="color:var(--text-muted);font-size:.9rem">Changes go live<br/>in ~60 seconds</div></div>
+      </div>
+      <a href="https://github.com" class="btn btn-primary" target="_blank">
+        Go to GitHub to start →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2025 <strong>Jero W. Grabo</strong> and the Lyra Language Team. MIT License.</p>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
